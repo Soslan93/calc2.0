@@ -58,20 +58,20 @@
         border-radius: 5px;
         font-size: 22px; 
         cursor: pointer; 
-        &--equal {
-            grid-row: span 2;
-        }
         &--zero {
             grid-column: span 2;
         }
         &--science {
             display: none;
             background: linear-gradient(to right, #f12711, #f5af19);
-        }
+        } 
         &:hover {
             background: rgba(0, 0, 0, 0.8);
         }
     }
+}
+.equal {
+    grid-row: span 2;
 }
 .change-color {
     display: flex;

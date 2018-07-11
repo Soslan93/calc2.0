@@ -2145,8 +2145,6 @@ input:checked + .slider:before {
     border-radius: 5px;
     font-size: 22px;
     cursor: pointer; }
-    .numeric-keypad__item--equal {
-      grid-row: span 2; }
     .numeric-keypad__item--zero {
       grid-column: span 2; }
     .numeric-keypad__item--science {
@@ -2154,6 +2152,9 @@ input:checked + .slider:before {
       background: linear-gradient(to right, #f12711, #f5af19); }
     .numeric-keypad__item:hover {
       background: rgba(0, 0, 0, 0.8); }
+
+.equal {
+  grid-row: span 2; }
 
 .change-color {
   display: flex;

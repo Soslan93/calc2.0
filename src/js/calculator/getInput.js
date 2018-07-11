@@ -13,7 +13,7 @@ export const getCalc = (e) => {
 export const getInput = (e) => {
     if (e.target.value !== "equal") {
         document.querySelector(".form-control--memory").value = document.querySelector(".form-control--memory").value + e.target.value;
-        if (e.target.value !== "%") {
+        if (!(["%", "log", "√","!","ln"].indexOf(e.target.value)+1)) {
             document.querySelector(".form-control--calculator").value = document.querySelector(".form-control--calculator").value + e.target.value;
         }
     }
