@@ -1,31 +1,32 @@
 import { calc } from "./calc.js";
 // вычисления калькулятора
-export const getCalc = (e) => {
+export const getCalc = (selector, e) => {
     if (e.keyCode === 13 || e.which === 13 || ["+", "-", "equal","*","÷"].indexOf(e.target.value)+1) {
-        const inp = document.querySelector('.form-control--calculator').value;
-        calc(inp);
+        const inp = selector.querySelector('.form-control--calculator').value;
+        // тут мы производим простые вычисления
+        calc(inp, selector);
         if (e.keyCode === 13 || e.target.value === "equal") {
-            document.querySelector('.form-control--memory').value = document.querySelector('.form-control--calculator').value;
+            selector.querySelector('.form-control--memory').value = selector.querySelector('.form-control--calculator').value;
         }
     };
 }
+
 //получаем то что вводим (если жмем кнопки цифровой клаватуры на экране)
-export const getInput = (e) => {
+export const getInput = (selector, e) => {
     if (e.target.value !== "equal") {
-        document.querySelector(".form-control--memory").value = document.querySelector(".form-control--memory").value + e.target.value;
+        selector.querySelector(".form-control--memory").value = selector.querySelector(".form-control--memory").value + e.target.value;
         if (!(["%", "log", "√","!","ln"].indexOf(e.target.value)+1)) {
-            document.querySelector(".form-control--calculator").value = document.querySelector(".form-control--calculator").value + e.target.value;
+            selector.querySelector(".form-control--calculator").value = selector.querySelector(".form-control--calculator").value + e.target.value;
         }
     }
 };
 // сброс значения
-export const resInput = () => {
-    document.querySelector(".form-control--calculator").value = " ";
-    resMemory();
+export const resInput = selector => {
+    selector.querySelector(".form-control--calculator").value = " ";
+    resMemory(selector);
 };
 
 // сброс верхнего инпута (памяти)
-const resMemory = () => {
-    document.querySelector(".form-control--memory").value = " ";
+const resMemory = selector => {
+    selector.querySelector(".form-control--memory").value = " ";
 } 
-

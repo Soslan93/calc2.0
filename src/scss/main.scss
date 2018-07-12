@@ -9,6 +9,14 @@
     transition-property: background-color;
     transition-duration: 3s;
 }
+.calculator2 {
+    margin-bottom: 30px;
+    padding: 30px 10px;
+    background: linear-gradient(to right, #bdc3c7, #2c3e50);
+    border-radius: 5px;
+    transition-property: background-color;
+    transition-duration: 3s;
+}
 .calculator--science {
     margin-bottom: 30px;
     padding: 30px 10px;
@@ -76,7 +84,7 @@
 .change-color {
     display: flex;
     justify-content: center;
-    margin-bottom: 25px;
+    margin-top: 20px;
 }
 .change-item {
     background: linear-gradient(to right, #141e30, #243b55);
@@ -111,4 +119,62 @@ input[type="number"]::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
     max-width: 250px;
+}
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    font-size: 22px;
+}
+.switch p {
+    padding-left: 70px;
+}
+
+.switch input {display:none;}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+input:checked + .slider {
+    background-color: #2196F3;
+}
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+.slider.round:before {
+    border-radius: 50%;
+}
+@media screen and (max-width: 700px){
+    .numeric-keypad {
+        padding: 0;
+    }
 }
