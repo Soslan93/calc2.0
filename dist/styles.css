@@ -2158,7 +2158,8 @@ input[type="number"]::-webkit-inner-spin-button {
   font-size: 22px; }
 
 .switch p {
-  padding-left: 70px; }
+  padding-left: 70px;
+  color: #fff; }
 
 .switch input {
   display: none; }
