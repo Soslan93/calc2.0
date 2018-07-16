@@ -6,6 +6,7 @@
   "dependencies": {
     "bootstrap": "^4.1.1",
     "jquery": "^3.3.1",
+    "mini-css-extract-plugin": "^0.4.1",
     "node-static": "^0.7.10",
     "popper.js": "^1.14.3"
   },
@@ -32,9 +33,9 @@
     "webpack-dev-server": "^3.1.4"
   },
   "scripts": {
-    "build:prod": "webpack --mode production",
+    "build:prod": "webpack --env production",
     "watch:prod": "webpack --watch --mode production",
-    "build:dev": "webpack-dev-server --mode production --open",
+    "build:dev": "webpack --env development",
     "start": "webpack-dev-server --mode production && node server.js"
   },
   "repository": {
