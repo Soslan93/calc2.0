@@ -34,7 +34,7 @@
   },
   "scripts": {
     "build:prod": "webpack --env production",
-    "watch:prod": "webpack --watch --mode production",
+    "watch:prod": "webpack --watch --env development",
     "build:dev": "webpack --env development",
     "start": "webpack-dev-server --mode production && node server.js"
   },
