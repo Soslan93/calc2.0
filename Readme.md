@@ -2,6 +2,11 @@
 
 This is a simple calculator application.
 
+# three patterns that I use
+1) simple factory (eventCalc.js line 7);
+2) singleton (operation.js line 2);
+3) module pattern (eventCalc.js line 25  we export our calcEvent which will become an importable module.)
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
