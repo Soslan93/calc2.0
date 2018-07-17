@@ -3,7 +3,7 @@ import { resInput } from "./getInput.js";
 // функция для простых вычислений
 export const calc = (inp, selector) => {
     let op, a, res;
-    a = inp.match(/[*^+÷-]/);
+    a = inp.match(/[*^+÷y-]/);
     if (a !== null) {
         op = inp.split(a[0]);
         switch (a[0]) {
@@ -22,7 +22,13 @@ export const calc = (inp, selector) => {
             case "^":
                 res = Math.pow(op[0], op[1]);
                 break;
+            case "y":
+                res = Math.pow(op[0], 1 / op[1]);
+                break;
         }
+        if (`${res}`.includes('.00')) {
+            res = parseInt(res);
+        };
         selector.querySelector(".form-control--calculator").value = res;
     }
 }

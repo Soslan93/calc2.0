@@ -35,6 +35,15 @@ npm install
 Start project
 ```
 npm run watch:prod or npm run build:prod or npm run build:dev or npm run start
+Webpack имеет две сборки: 
+a.	dist/prod:
+    i.	запускается с помощью команды «npm run build:prod»  
+    ii.	все файлы минифицируются
+    iii.	в index.html выводиться «Production mode» в заголовке (делается через webpack, плагин HtmlWebpackPlugin) 
+b.	dist/dev:
+    i.	запускается с помощью команды «npm run build:dev»
+    ii.	все файлы собираются в один, но не минифицируются
+    iii.	в index.html выводиться «Development mode» в заголовке
 
 ## Built With
 
