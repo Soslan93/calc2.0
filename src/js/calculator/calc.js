@@ -6,6 +6,21 @@ export const calc = (inp, selector) => {
     a = inp.match(/[*^+÷y-]/);
     if (a !== null) {
         op = inp.split(a[0]);
+        if (op[0] === "") {
+            op[0] = "0";
+        }
+        let b = op[1].match(/[*^+÷y-]/);
+        if (b !== null && b.index > 0 && !b.input.includes('(')&& !b.input.includes(')')) {
+            let un = op[1].split(b[0]);
+            op[0] = `-${un[0]}`;
+            op[1] = `${un[1]}`;
+            a[0] = b[0];
+        } else if (op[1].includes('(')&&op.length!==3) {
+            op[1] = op[1].slice(op[1].indexOf("(")+1, op[1].indexOf(")"));
+        } else if (op[1].includes('(')&&op.length===3) {
+            op[1] = `-${op[2].slice(0, -1)}`;
+            op.pop();
+        }
         switch (a[0]) {
             case "+":
                 res = operation.sum(op[0], op[1]);
@@ -52,6 +67,16 @@ export const scienceCalc = (selector, e) => {
     const inp = selector.querySelector('.form-control--calculator').value;
     a = inp.match(/[*+÷-]/);
     switch (b) {
+        case e.target.matches('.negative'):
+            if (a !== null) {
+                op = inp.split(a[0]);
+                op[1] = `(-${op[1]})`;
+                selector.querySelector('.form-control--calculator').value = `${op[0]}${a[0]}${op[1]}`;
+            } else {
+                op = - inp;
+                selector.querySelector('.form-control--calculator').value = op;
+            }
+            break;
         case e.target.matches('.log'):
             if (a !== null) {
                 op = inp.split(a[0]);

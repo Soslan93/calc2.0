@@ -6,6 +6,12 @@ export const getCalc = (selector, e) => {
         // тут мы производим простые вычисления
         calc(inp, selector);
         if (e.keyCode === 13 || e.target.value === "equal") {
+            if (selector.querySelector('.form-control--journal').value !== '') {
+                selector.querySelector('.form-control--journal').value += "\n" + selector.querySelector('.form-control--memory').value;
+            } else {
+                selector.querySelector('.form-control--journal').value += selector.querySelector('.form-control--memory').value;
+            }
+            
             selector.querySelector('.form-control--memory').value = selector.querySelector('.form-control--calculator').value;
         }
     };
@@ -15,7 +21,7 @@ export const getCalc = (selector, e) => {
 export const getInput = (selector, e) => {
     if (e.target.value !== "equal") {
         selector.querySelector(".form-control--memory").value = selector.querySelector(".form-control--memory").value + e.target.value;
-        if (!(["%", "log", "√","!","ln"].indexOf(e.target.value)+1)) {
+        if (!(["%", "log", "√","!","ln","n"].indexOf(e.target.value)+1)) {
             selector.querySelector(".form-control--calculator").value = selector.querySelector(".form-control--calculator").value + e.target.value;
         }
     }

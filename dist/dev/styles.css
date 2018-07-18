@@ -2082,6 +2082,15 @@ input[type="button"].btn-block {
   border-bottom-right-radius: 0px;
   border-bottom: none; }
 
+.form-control--journal {
+  display: none;
+  text-align: right;
+  background: linear-gradient(to right, #ada996, #f2f2f2, #dbdbdb, #eaeaea);
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px; }
+
 .description {
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-size: 20px;
@@ -2102,8 +2111,6 @@ input[type="button"].btn-block {
     border-radius: 5px;
     font-size: 22px;
     cursor: pointer; }
-    .numeric-keypad__item--zero {
-      grid-column: span 2; }
     .numeric-keypad__item--science {
       display: none;
       background: linear-gradient(to right, #f12711, #f5af19); }

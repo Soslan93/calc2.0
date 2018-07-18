@@ -45,6 +45,7 @@ b.	dist/dev:
     ii.	все файлы собираются в один, но не минифицируются
     iii.	в index.html выводиться «Development mode» в заголовке
 
+Проект включает в себя унарный минус, а также журнал, чтобы запустить журнал нажмите на checkbox, чтобы сбросить значения отключите журнал.
 ## Built With
 
 * [Webpack](https://webpack.js.org/)
@@ -52,6 +53,7 @@ b.	dist/dev:
 * [SCSS](https://sass-lang.com/)
 * [JavaScript]
 * [Docker](https://www.docker.com/)
+* [Babel](https://babeljs.io/)
 ## Authors
 
 * **Soslan Kulumbekov** - *Initial work*

@@ -1,6 +1,7 @@
 import { changeColor } from "../theming/color.js";
 import { getInput, resInput, getCalc, getScienceCalc } from "./getInput.js";
 import { checkScience } from "../toggle/checkScience.js";
+import { checkJournal } from "../toggle/checkJournal.js";
 import { percent, scienceCalc } from "./calc.js";
 let _singleton = null
 /** фабрика предназначена для создания объектов*/
@@ -45,6 +46,8 @@ const calcEvent = (calc) => {
     for (let i = 0; i <= scoper.length - 1; i++) {
         scoper[i].addEventListener('click', scienceCalc.bind(this, calc));
     }
+    /** проверка переключателя журнала*/
+    calc.querySelector(".myJournal").addEventListener('click', checkJournal.bind(this, calc));
 }
 
 export default calcEvent;
