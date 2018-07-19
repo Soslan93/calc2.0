@@ -51,4 +51,4 @@ npm run watch:prod or npm run build:prod or npm run build:dev or npm run start
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [Soslan93](https://github.com/Soslan93)
+* **Soslan Kulumbekov** - *Initial work* - [Soslan93](https://github.com/Soslan93)
