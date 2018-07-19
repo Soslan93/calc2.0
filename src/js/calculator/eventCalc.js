@@ -3,7 +3,7 @@ import { getInput, resInput, getCalc, getScienceCalc } from "./getInput.js";
 import { checkScience } from "../toggle/checkScience.js";
 import { checkJournal } from "../toggle/checkJournal.js";
 import { percent, scienceCalc } from "./calc.js";
-let _singleton = null
+
 /** фабрика предназначена для создания объектов*/
 class InitCalculate {
     constructor(clName) {
