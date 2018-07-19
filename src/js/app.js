@@ -1,6 +1,6 @@
 import 'bootstrap';
 import "../scss/custom.scss";
-import Calculator from "./calculator/event-calc";
+import Calculator from "./calculator/init";
 
 /** использование фабрики*/
 const calculate1 = new Calculator('.calculator');

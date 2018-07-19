@@ -13,7 +13,7 @@ export const getCalc = (selector, e) => {
 
 /** получаем то что вводим (если жмем кнопки цифровой клаватуры на экране) */
 export const getInput = (selector, e) => {
-    if (e.target.value !== "equal") {
+    if (e.target.value !== "equal" && e.target.value!==undefined) {
         selector.querySelector(".form-control--memory").value = selector.querySelector(".form-control--memory").value + e.target.value;
         if (!(["%", "log", "√","!","ln"].indexOf(e.target.value)+1)) {
             selector.querySelector(".form-control--calculator").value = selector.querySelector(".form-control--calculator").value + e.target.value;
