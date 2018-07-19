@@ -46,7 +46,7 @@ npm run watch:prod or npm run build:prod or npm run build:dev or npm run start
 * [Webpack](https://webpack.js.org/)
 * [Bootstrap](https://getbootstrap.com/)
 * [SCSS](https://sass-lang.com/)
-* [JavaScript]
+* [JavaScript](https://www.javascript.com/)
 * [Docker](https://www.docker.com/)
 
 ## Authors
