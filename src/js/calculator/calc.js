@@ -1,5 +1,5 @@
 import { operation } from "./operation.js";
-import { resInput } from "./getInput.js";
+import { resInput } from "./get-input.js";
 /** функция для простых вычислений*/
 export const calc = (inp, selector) => {
     let op, a, res;

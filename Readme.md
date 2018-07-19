@@ -3,9 +3,9 @@
 This is a simple calculator application.
 
 # three patterns that I use
-1) simple factory (eventCalc.js line 7);
-2) singleton (operation.js line 2);
-3) module pattern (eventCalc.js line 25  we export our calcEvent which will become an importable module.)
+1) simple factory (src/js/calculator/eventCalc.js line 7);;
+2) singleton (src/js/calculator/operation.js line 2);
+3) module pattern (src/js/calculator/eventCalc.js line 25  we export our calcEvent which will become an importable module.)
 
 ## Getting Started
 
@@ -48,6 +48,7 @@ npm run watch:prod or npm run build:prod or npm run build:dev or npm run start
 * [SCSS](https://sass-lang.com/)
 * [JavaScript]
 * [Docker](https://www.docker.com/)
+
 ## Authors
 
-* **Soslan Kulumbekov** - *Initial work*
+* **Billie Thompson** - *Initial work* - [Soslan93](https://github.com/Soslan93)

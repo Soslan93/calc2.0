@@ -1,7 +1,10 @@
 import 'bootstrap';
 import "../scss/custom.scss";
-import {calculate1, calculate2} from "./calculator/eventCalc";
+import Calculator from "./calculator/event-calc";
 
+/** использование фабрики*/
+const calculate1 = new Calculator('.calculator');
 calculate1.init();
-
+/** использование фабрики*/
+const calculate2 = new Calculator('.calculator2');
 calculate2.init();
