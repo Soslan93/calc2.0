@@ -1,4 +1,4 @@
-// проверка режима инженерного калькулятора
+/** проверка режима инженерного калькулятора*/
 export const checkScience = (selector, e) => {
     
     const elem = selector.querySelectorAll('.numeric-keypad__item--science');

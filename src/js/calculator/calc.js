@@ -1,6 +1,6 @@
 import { operation } from "./operation.js";
 import { resInput } from "./getInput.js";
-// функция для простых вычислений
+/** функция для простых вычислений*/
 export const calc = (inp, selector) => {
     let op, a, res;
     a = inp.match(/[*^+÷y-]/);
@@ -47,7 +47,7 @@ export const calc = (inp, selector) => {
         selector.querySelector(".form-control--calculator").value = res;
     }
 }
-// функция для процентов
+/** функция для процентов*/
 export const percent = (selector) => {
     let op, a;
     const inp = selector.querySelector('.form-control--calculator').value;
@@ -61,7 +61,7 @@ export const percent = (selector) => {
         selector.querySelector('.form-control--calculator').value = op;
     }
 }
-// функция для научных вычислений
+/** функция для научных вычислений*/
 export const scienceCalc = (selector, e) => {
     let op, a, b = true;
     const inp = selector.querySelector('.form-control--calculator').value;
@@ -132,15 +132,15 @@ export const scienceCalc = (selector, e) => {
 }
 
 const factorial = (operand) => {
-    // If the number is less than 0, reject it.
+    /** If the number is less than 0, reject it.*/
     if (operand < 0) {
         return -1;
     }
-    // If the number is 0, its factorial is 1.
+    /** If the number is 0, its factorial is 1.*/
     else if (operand == 0) {
         return 1;
     }
-    // Otherwise, call this recursive procedure again.
+    /** Otherwise, call this recursive procedure again.*/
     else {
         return (operand * factorial(operand - 1));
     }
