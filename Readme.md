@@ -40,7 +40,7 @@ npm install
 Start project
 ```
 npm run watch:prod or npm run build:prod or npm run build:dev or npm run start
-
+```
 ## Built With
 
 * [Webpack](https://webpack.js.org/)
