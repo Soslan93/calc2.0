@@ -1,5 +1,5 @@
-import { operation } from "./operation.js";
-import { resInput } from "./getInput.js";
+import { operation } from "./operation";
+import { resInput } from "./get-input";
 /** функция для простых вычислений*/
 export const calc = (inp, selector) => {
     let op, a, res;
@@ -10,14 +10,14 @@ export const calc = (inp, selector) => {
             op[0] = "0";
         }
         let b = op[1].match(/[*^+÷y-]/);
-        if (b !== null && b.index > 0 && !b.input.includes('(')&& !b.input.includes(')')) {
+        if (b !== null && b.index > 0 && !b.input.includes('(') && !b.input.includes(')')) {
             let un = op[1].split(b[0]);
             op[0] = `-${un[0]}`;
             op[1] = `${un[1]}`;
             a[0] = b[0];
-        } else if (op[1].includes('(')&&op.length!==3) {
-            op[1] = op[1].slice(op[1].indexOf("(")+1, op[1].indexOf(")"));
-        } else if (op[1].includes('(')&&op.length===3) {
+        } else if (op[1].includes('(') && op.length !== 3) {
+            op[1] = op[1].slice(op[1].indexOf("(") + 1, op[1].indexOf(")"));
+        } else if (op[1].includes('(') && op.length === 3) {
             op[1] = `-${op[2].slice(0, -1)}`;
             op.pop();
         }
@@ -70,8 +70,20 @@ export const scienceCalc = (selector, e) => {
         case e.target.matches('.negative'):
             if (a !== null) {
                 op = inp.split(a[0]);
-                op[1] = `(-${op[1]})`;
-                selector.querySelector('.form-control--calculator').value = `${op[0]}${a[0]}${op[1]}`;
+                if (op[1] === "(" && op[0]!=="") {
+                    console.log(op[1],op[2])
+                    op[1] = `${op[2].slice(0 , op[2].indexOf(")"))}`;
+                } else if (op[0]!=="") {
+                    op[1] = `(-${op[1]})`;
+                    
+                    console.log(op);
+                } 
+                if (op[0]!=="") {
+                    selector.querySelector('.form-control--calculator').value = `${op[0]}${a[0]}${op[1]}`;
+                } else {
+                    selector.querySelector('.form-control--calculator').value = `${op[1]}`;
+                }
+                
             } else {
                 op = - inp;
                 selector.querySelector('.form-control--calculator').value = op;

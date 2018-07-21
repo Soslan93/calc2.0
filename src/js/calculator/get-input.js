@@ -1,4 +1,4 @@
-import { calc } from "./calc.js";
+import { calc } from "./calc";
 /** вычисления калькулятора*/
 export const getCalc = (selector, e) => {
     if (e.keyCode === 13 || e.which === 13 || ["+", "-", "equal","*","÷"].indexOf(e.target.value)+1) {
@@ -19,7 +19,7 @@ export const getCalc = (selector, e) => {
 
 /**получаем то что вводим (если жмем кнопки цифровой клаватуры на экране)*/
 export const getInput = (selector, e) => {
-    if (e.target.value !== "equal") {
+    if (e.target.value !== "equal" && e.target.value !== undefined) {
         selector.querySelector(".form-control--memory").value = selector.querySelector(".form-control--memory").value + e.target.value;
         if (!(["%", "log", "√","!","ln","n"].indexOf(e.target.value)+1)) {
             selector.querySelector(".form-control--calculator").value = selector.querySelector(".form-control--calculator").value + e.target.value;

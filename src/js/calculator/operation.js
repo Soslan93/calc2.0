@@ -1,3 +1,4 @@
+/** pattern singleton (единный экземпляр, который присутствует в приложение)*/
 export const operation = {
     sum: (a, b) => {
         let c;
