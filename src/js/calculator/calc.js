@@ -1,4 +1,4 @@
-import { operation } from "./operation";
+import { Operation } from "./operation";
 import { resInput } from "./get-input";
 /** функция для простых вычислений*/
 export const calc = (inp, selector) => {
@@ -17,22 +17,26 @@ export const calc = (inp, selector) => {
             a[0] = b[0];
         } else if (op[1].includes('(') && op.length !== 3) {
             op[1] = op[1].slice(op[1].indexOf("(") + 1, op[1].indexOf(")"));
+            console.log(op);
         } else if (op[1].includes('(') && op.length === 3) {
             op[1] = `-${op[2].slice(0, -1)}`;
             op.pop();
+        } else if (a[0]==="-"&&op.length===3){
+            op[0] = `-${op[1]}`;
+            op[1] = `${op[2]}`;
         }
         switch (a[0]) {
             case "+":
-                res = operation.sum(op[0], op[1]);
+                res = Operation.sum(op[0], op[1]);
                 break;
             case "-":
-                res = operation.sub(op[0], op[1]);
+                res = Operation.sub(op[0], op[1]);
                 break;
             case "÷":
-                res = operation.division(op[0], op[1]);
+                res = Operation.division(op[0], op[1]);
                 break;
             case "*":
-                res = operation.multiply(op[0], op[1]);
+                res = Operation.multiply(op[0], op[1]);
                 break;
             case "^":
                 res = Math.pow(op[0], op[1]);
@@ -70,20 +74,19 @@ export const scienceCalc = (selector, e) => {
         case e.target.matches('.negative'):
             if (a !== null) {
                 op = inp.split(a[0]);
-                if (op[1] === "(" && op[0]!=="") {
-                    console.log(op[1],op[2])
-                    op[1] = `${op[2].slice(0 , op[2].indexOf(")"))}`;
-                } else if (op[0]!=="") {
+                if (op[1] === "(" && op[0] !== "") {
+                    op[1] = `${op[2].slice(0, op[2].indexOf(")"))}`;
+                } else if (op[0] !== "" && !op[1].includes("-")) {
                     op[1] = `(-${op[1]})`;
-                    
-                    console.log(op);
-                } 
-                if (op[0]!=="") {
+                } else if (op[1].includes("-")) {
+                    op[1] = `${op[1].slice(2, op[1].indexOf(")"))}`;
+                }
+                if (op[0] !== "") {
                     selector.querySelector('.form-control--calculator').value = `${op[0]}${a[0]}${op[1]}`;
                 } else {
                     selector.querySelector('.form-control--calculator').value = `${op[1]}`;
                 }
-                
+
             } else {
                 op = - inp;
                 selector.querySelector('.form-control--calculator').value = op;

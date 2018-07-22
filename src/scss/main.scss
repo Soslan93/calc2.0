@@ -84,6 +84,10 @@
         }
     }
 }
+.button-clear {
+    display: none;
+    width: 300px
+}
 .equal {
     grid-row: span 2;
     background: linear-gradient(to right, #3ca55c, #b5ac49);

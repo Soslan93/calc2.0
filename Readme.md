@@ -57,7 +57,7 @@ b.	dist/dev:
 the project uses ES6 features:
 1) const (define calculate1, calculate2 as a constant src/js/app.js line 9,8; src/js/calculator/operation.js line 1);
 2) let (declares a block scope local variable src/js/calculator/calc.js line 5);
-3) class (The class declaration creates a new class with a given name using prototype-based inheritance. src/js/calculator/init.js);
+3) class (The class declaration creates a new class with a given name using prototype-based inheritance. src/js/calculator/init.js, src\js\calculator\operation.js line 2);
 4) arrow function (An arrow function expression has a shorter syntax than a function expression, src/js/calculator/get-input.js line 3, 21, 30);
 5) import (The import statement is used to import bindings which are exported by another module. src/js/calculator/get-input.js line 1, src/js/app.js line 1,2,3);
 6) export (Instruction is used to export functions, objects, or primitives from the module. src/js/calculator/get-input.js line 3, 21, 30)
