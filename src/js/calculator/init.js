@@ -1,6 +1,7 @@
 import { changeColor } from "./theming/color";
 import { getInput, resInput, getCalc, getScienceCalc } from "./get-input";
 import { checkScience } from "./toggle/check-science";
+import { checkJournal } from "./toggle/check-journal";
 import { percent, scienceCalc } from "./calc";
 /** фабрика предназначена для создания объектов*/
 class Calculator {
@@ -32,7 +33,11 @@ class Calculator {
         for (let i = 0; i <= scoper.length - 1; i++) {
             scoper[i].addEventListener('click', scienceCalc.bind(this, calc));
         }
+        /** обработчик события для работы с унарным минусом*/
         calc.querySelector('.negative').addEventListener('click', scienceCalc.bind(this, calc));
+        /** обработчик события для работы с журналом*/
+        calc.querySelector(".myJournal").addEventListener('click', checkJournal.bind(this, calc));
+
     }
 }
 export default Calculator;
