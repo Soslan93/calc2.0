@@ -4,7 +4,7 @@ This is a simple calculator application.
 
 # three patterns that I use
 1) simple factory (src/js/calculator/init.js line 6);
-3) module pattern (src/js/calculator/eventCalc.js line 25  we export our calcEvent which will become an importable module.)
+2) module pattern (src/js/calculator/eventCalc.js line 25  we export our calcEvent which will become an importable module.)
 
 ## Getting Started
 
@@ -60,6 +60,14 @@ the project uses ES6 features:
 4) arrow function (An arrow function expression has a shorter syntax than a function expression, src/js/calculator/get-input.js line 3, 21, 30);
 5) import (The import statement is used to import bindings which are exported by another module. src/js/calculator/get-input.js line 1, src/js/app.js line 1,2,3);
 6) export (Instruction is used to export functions, objects, or primitives from the module. src/js/calculator/get-input.js line 3, 21, 30)
+
+## Node.JS and WebSocket
+web-socket.js - файл с настройками и секретным вычислением.
+
+Для запуска сервера Node.js в командной строке введите npm run build:ws.
+откройте файл (dist\dev\index.html).
+
+По нажатию на кнопку "ws", происходит секретное вычисление (введеное число умножается на пи).
 
 ## Built With
 

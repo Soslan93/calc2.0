@@ -3,6 +3,7 @@ import { getInput, resInput, getCalc, getScienceCalc } from "./get-input";
 import { checkScience } from "./toggle/check-science";
 import { checkJournal, clearJournal } from "./toggle/check-journal";
 import { percent, scienceCalc } from "./calc";
+import { secretFormula } from "./secret-formula";
 /** фабрика предназначена для создания объектов*/
 class Calculator {
     constructor(clName) {
@@ -39,6 +40,8 @@ class Calculator {
         calc.querySelector(".myJournal").addEventListener('click', checkJournal.bind(this, calc));
         /** обработчик события для очистки журнала*/
         calc.querySelector(".button-clear").addEventListener('click', clearJournal.bind(this, calc));
+        /**Обработчик для вычисления числа по секретной формуле */
+        calc.querySelector(".ws").addEventListener('click', secretFormula.bind(this, calc));
 
     }
 }
