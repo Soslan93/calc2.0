@@ -9,7 +9,6 @@ webSocketServer.on('connection', function (ws) {
 
     ws.on('message', function (message) {
         console.log('получено число ' + message);
-
         ws.send(message * Math.PI);
     });
 

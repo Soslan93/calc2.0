@@ -1,15 +1,21 @@
-FROM node:7
+FROM ubuntu:16.04
+RUN  apt-get update \
+    && DEBIAN_FRONTEND=noninteractive apt-get install -y \
+    curl \
+    python-software-properties 
 
-WORKDIR /var/www/html
-COPY package.json /var/www/html
+# install node.js
+RUN curl -sL https://deb.nodesource.com/setup_8.x | bash
+RUN apt-get install nodejs -y
+
+RUN apt install libpng-dev -y
+RUN npm update
+
+WORKDIR /var/www/html/code
+COPY ./package.json ./
+# install dependencies
 RUN npm install
-COPY . /var/www/html
 
-#RUN apt-get update
-#RUN apt-get install -y nodejs
-#RUN apt-get install -y npm
-
-
-EXPOSE 8082
-
-CMD ["npm", "run", "start"]
+#copy code 
+COPY ./ ./
+CMD [ "npm", "run", "build:prod" ]
